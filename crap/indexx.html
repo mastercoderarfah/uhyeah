@@ -1,0 +1,86 @@
+# Fixing the issue by removing special characters and using plain text
+from fpdf import FPDF
+
+# Create a PDF document
+pdf = FPDF()
+pdf.add_page()
+pdf.set_auto_page_break(auto=True, margin=15)
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(190, 10, 'Trigonometric Quadratic Inequality Problem Notes', 0, 1, 'C')
+pdf.ln(5)
+
+# Adding the content to the PDF
+pdf.set_font('Arial', '', 12)
+
+content = """
+Classification: Trigonometric Quadratic Inequality Problem
+Type: Quadratic in sin^2(2theta), cos^2(2theta), etc., requiring real roots condition.
+Key Concept: Apply the discriminant condition D >= 0 to ensure real roots.
+Common Trick: Watch out for range constraints on trigonometric functions like sin^2(theta) and cos^2(theta).
+
+General Approach to Solve Trigonometric Quadratic Problems:
+
+Step 1: Write Down the Given Equation Clearly
+For example:
+P(x) = (sin^4(theta) + cos^4(theta))x^2 + (sin(2theta))x + (sin^6(theta) + cos^6(theta)) = 0
+
+Step 2: Use Pythagorean Identities to Simplify
+- sin^2(theta) + cos^2(theta) = 1
+- sin^4(theta) + cos^4(theta) = (sin^2(theta) + cos^2(theta))^2 - 2 sin^2(theta) cos^2(theta)
+- sin^2(theta) cos^2(theta) = (1/4)sin^2(2theta)
+
+Simplify all higher powers of sin(theta) and cos(theta) using these identities.
+
+Step 3: Apply the Discriminant Condition D >= 0
+For any quadratic equation:
+ax^2 + bx + c = 0
+The discriminant is:
+D = b^2 - 4ac
+Substitute the coefficients from your equation and simplify.
+
+Step 4: Recognize a Quadratic in sin^2(2theta) or cos^2(2theta)
+After simplifying the discriminant, you’ll often end up with a quadratic in sin^2(2theta) or another trigonometric term:
+-3/2 y^2 + 6y - 4 > 0, where y = sin^2(2theta)
+
+Step 5: Solve the Quadratic Inequality
+1. Use the quadratic formula to find the solutions:
+y = (-B ± sqrt(B^2 - 4AC)) / 2A
+2. Check if the solutions are within the valid range:
+0 <= y <= 1
+
+Step 6: Don’t Forget Boundary Values (0 and 1)
+Check if the boundary values 0 and 1 are valid solutions, even if they don’t come from the quadratic formula.
+
+Step 7: Identify alpha and beta
+alpha = smallest valid value of y
+beta = largest valid value of y
+
+Step 8: Calculate the Final Expression
+For example, if the question asks for:
+3((alpha - 2)^2 + (beta - 1)^2)
+Substitute the values of alpha and beta to find the answer.
+
+Important Range Constraints to Remember:
+| Trig Function       | Range         |
+|---------------------|---------------|
+| sin^2(theta)        | [0, 1]        |
+| cos^2(theta)        | [0, 1]        |
+| sin(theta)          | [-1, 1]       |
+| cos(theta)          | [-1, 1]       |
+
+Quick Tips:
+1. Always simplify high powers using Pythagorean identities.
+2. Discriminant condition D >= 0 ensures real roots.
+3. Watch for range constraints on trig functions.
+4. Boundary values (0 and 1) must be checked separately.
+"""
+
+# Add the content to the PDF
+pdf.multi_cell(0, 10, content)
+
+# Save the PDF
+output_path = "/mnt/data/Trig_Quadratic_Notes.pdf"
+pdf.output(output_path)
+
+# Provide the link to the user
+output_path
