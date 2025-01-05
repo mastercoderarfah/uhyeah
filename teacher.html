@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Information Form</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fff3e0;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #6b4226;
+            font-size: 32px;
+        }
+        form {
+            background-color: #fef5e7;
+            padding: 20px;
+            border: 2px solid #d4a373;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #6b4226;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #d4a373;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #d4a373;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #b4745e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Information Form</h1>
+    <form action="submit_teacher_info.html" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="subjects">Preferred Subjects/Grades:</label>
+        <input type="text" id="subjects" name="subjects">
+
+        <label for="fee">Fee per Hour:</label>
+        <input type="text" id="fee" name="fee">
+
+        <label for="timings">Available Timings:</label>
+        <input type="text" id="timings" name="timings">
+
+        <label for="contact">Contact Info:</label>
+        <input type="text" id="contact" name="contact">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
